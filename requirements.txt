@@ -1,0 +1,9 @@
+flask==2.3.3
+numpy==1.26.0
+pandas==2.1.1
+mediapipe
+opencv-python
+torch
+gTTS
+scikit-learn
+flask-cors

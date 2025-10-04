@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign Language AI</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Sign Language Detection</h1>
+    <meta id="config" data-seq-len="{{ seq_len }}" data-labels='{{ labels|tojson }}'>
+    <div class="video-row">
+      <video id="video" class="video" autoplay muted playsinline></video>
+      <canvas id="canvas" class="canvas"></canvas>
+    </div>
+    <div class="status">
+      <div><strong>Prediction:</strong> <span id="prediction">-</span></div>
+      <div><strong>FPS:</strong> <span id="fps">0</span></div>
+    </div>
+
+    <h2>Text to Sign (Demo)</h2>
+    <div class="tts-row">
+      <input id="ttsText" placeholder="Type text..." />
+      <button id="ttsBtn">Play Speech</button>
+      <button id="text2signBtn">Text → Sign</button>
+    </div>
+    <div id="signSequence" class="sign-sequence"></div>
+  </div>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
